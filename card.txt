@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Boo!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8d7d2;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card {
+            background-color: white;
+            border-radius: 20px;
+            width: 80%;
+            max-width: 600px;
+            padding: 40px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1s ease-in-out;
+        }
+        h1 {
+            font-size: 36px;
+            color: #e83e8c;
+        }
+        p {
+            font-size: 20px;
+            color: #333;
+            margin: 20px 0;
+        }
+        .rose {
+            font-size: 70px;
+            color: #ff6666;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .rose:hover {
+            transform: scale(1.1);
+        }
+        .hidden-message {
+            font-size: 18px;
+            color: #555;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" id="card">
+        <h1>Happy Birthday Boo!</h1>
+        <p>Here's a rose for you! 🌹</p>
+        <div class="rose" id="rose">🌹</div>
+        <div class="hidden-message" id="message">
+            Sorry baby, couldn't make your day special, but just know you are the most unexpected thing that happened, and it turned out to be so good. 💖
+        </div>
+    </div>
+
+    <script>
+        // This function will show the card after a tap (click)
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('card').style.visibility = 'visible';
+                document.getElementById('card').style.opacity = 1;
+            }, 1000); // Wait for 1 second before showing the card
+        }
+
+        // Handle the rose tap to show the hidden message
+        document.getElementById('rose').addEventListener('click', function() {
+            document.getElementById('message').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
